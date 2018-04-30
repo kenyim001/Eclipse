@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+		window.onload=function(){
+			//查询节点
+			//1.根据Id查询节点
+			//2.根据标签名查询节点
+			//3.根据name查询节点
+			var radios=document.getElementsByName("sex");
+			console.log(radios);
+			//4.根据层次（关系）查询节点即某节点的亲属
+			//查询某节点的父亲
+			var gz=document.getElementById("gz");
+			var ul=gz.parentNode;
+			console.log(ul);
+			//2)查询某节点的孩子
+			console.log(ul.childNodes);
+			//3)查询某节点的孩子（不带文本）
+			console.log(ul.getElementsByTagName("li"))
+			//4)查询兄弟姐妹：节点.孩子们
+			var li1=gz.parentNode.getElementsByTagName("li")[1];
+			console.log(li1);
+		}
+
+		function  f1() {
+			//创建新节点
+			var li=document.createElement("li");
+			//设置此li
+			li.innerHTML="天津";
+			//追加新节点
+			
+			var ul=document.getElementById("city");
+			ul.appendChild(li);
+		}
+		function f2(){
+				var li=document.createElement("li");
+				li.innerHTML="长春";
+				var ul=document.getElementById("city");
+				var gz=document.getElementById("gz");
+				ul.insertBefore(li, gz);
+			}
+			function f3() {
+				var ul=document.getElementById("city");
+				var gz=document.getElementById("gz");
+				ul.removeChild(gz);
+			}
+	
+		
+
+</script>
+
+</head>
+<body>
+	<p>
+		性别：
+		<input type="radio" name="sex"/>男
+		 <input type="radio" name="sex"/>女
+	</p>	
+	
+	<ul id="city">
+			<li>北京</li>
+			<li>上海</li>
+			<li id="gz">广州</li>
+			<li>深圳</li>
+			<li>南京</li>
+	</ul>
+	<p>
+		<input type="button" value="追加" onclick="f1();"/>
+		<input type="button" value="插入" onclick="f2();"/>
+		
+	</p>
+</body>
+</html>

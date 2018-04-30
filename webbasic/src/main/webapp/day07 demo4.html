@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+		<script type="text/javascript">
+		function f1(){
+				var b=confirm("你确定要离开？")
+				if(b){
+				location.href="http://www.tmooc.cn";
+				}
+		}
+		function reload(){
+			location.reload();
+		}
+		
+		function f3() {
+			history.forward();
+		}
+		
+		//screen
+		console.log(screen.width);
+		console.log(screen.height);
+		console.log(screen.availWidth);
+		console.log(screen.availHeight);
+		
+		//navigator
+		console.log(navigator.userAgent);
+		
+		</script>
+</head>
+<body>
+		<input type="button" value="按键1" onclick="f1();"/>
+		<input type="button" value="发送" onclick="reload();"/>
+		<input type="button" value="前曀" onclick="f3();"/>
+</body>
+</html>

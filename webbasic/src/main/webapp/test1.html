@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+		<style type="text/css">
+				#gg{
+					border:1px solid red;
+					height:500px;
+					background-color:red;
+					margin:1px;
+				}
+				.hide{ 
+			display:none;
+			position:relative;
+		}
+			#d1{
+			width:30px;
+			height:30px;
+			}	
+
+		</style>
+			<script src="js/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+
+//点击开始
+var a=0;
+var id;
+$(function(){
+	$("#start").click(function(){
+		if(id){
+			return ;
+		}
+		a=0;
+		 $("#fensu").html(a);
+		console.log("id="+id); 
+		$(function(){	
+		$("#jiesuyu").html("");
+		 random();
+		$("#d1").show();	
+		
+		//倒计时结束
+		setTimeout(function(){
+			id=1;
+			console.log("id="+id); 
+			over();
+		}, 10000);
+		
+		});
+	});
+});			
+
+//点击图片
+$(function(){
+$("#d1").click(
+	function(){
+		random();
+	a++;
+	$("#fensu").html(a);
+	});		
+});	
+
+//点击结束
+$(function(){
+	$("#over").click(function(){
+		over();
+	});
+});	
+
+//结束方法
+	function over(){
+		var c;	
+		 var e=$("#fensu").html()
+			if(e>10){
+				c='↖(^ω^)↗  恭喜你!大神你打败了全国97%的人呀!!!';
+			}else if(e>7){
+				c='↖(^ω^)↗  恭喜你!大神你打败了全国90%的人呀!!!';
+			}else if(e>5){
+				c='↖(^ω^)↗  恭喜你!大神你打败了全国80%的人呀!!!';
+			}else if(e>0){
+				c='〒_〒  很可惜!大神你只打败了全国40%的人呀!!!';
+			}else{
+				c='〒_〒 大神请确认你的鼠标有没有坏?';
+			}
+			$("#d1").hide();
+			$("#jiesuyu").html(c);
+			clearTimeout(id);
+			id=null;
+			console.log(id); 
+	}
+
+//随机坐标
+	function random(){
+			var c=parseFloat(Math.random());
+			var e=$('div'). width()-30;
+			var d=parseFloat(Math.random());
+			$("#d1").animate({"left":e*c+"px","top":470*d+"px"},0); 
+	}
+	
+	   $(function(){  
+	        $("#fensu").click(function(){  
+	        	var e=$("#fensu").html();
+	        	$("#fensu").html(e*1+10);
+	        });  
+	    });  
+</script>
+<body>
+			<input type="button" value="开始" id="start" />
+			<input type="button" value="结束" id="over" />
+			连击数：<p id="fensu"></p>
+			<div id="gg">	
+				<img src="images/01.jpg" id="d1" class="hide" />
+				<p align="center" style=line-height:470px;color:yellow;font-size:30px id="jiesuyu"></p>
+				
+		</div>
+		<input class="hide">
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+	<script>
+		function f1(){
+		var b=confirm("确定要清空?");
+		console.log(b);
+		}
+		//周期性定时器
+		function f2(){
+			//启动周期性定时器，即让浏览器每隔
+			//1000毫秒调用一次匿名函数
+			//该方法反回定时器的ID此ID用于停止定时器
+			var n=5;
+			var id=setInterval(function(){console.log( 
+						n--);
+						 if(n==-1){
+								clearInterval(id);
+								console.log("Duang");
+					}
+				},1000);
+			//定时器就好像是支线程，当前的方法F2
+			//就好像是主线程，二者是并发执行的，
+			//所以主线程在启动支线程后，立刻输出了BOOM
+			//而支线的线程会1秒后才执行第一次
+			console.log("BOOM");
+		}
+		
+		var id;
+		function f3(){
+			//启动一次性定时器，即在50000毫秒之后
+			//调用匿名函数，调用后定时器自动停止
+			//该方法返回的时定时器的ID用来提前停止定时器
+		id=	setTimeout(function(){
+				console.log("叮叮叮叮");
+			},5000);
+		}
+		
+		function f4(){
+			clearTimeout(id);
+		}
+		
+	</script>
+
+<body>
+		<input type="button" value="清空" onclick="f1();"/>
+		<input type="button" value="倒数" onclick="f2();"/>
+		<input type="button" value="提查" onclick="f3();"/>
+		<input type="button" value="取消" onclick="f4();"/>
+</body>
+</html>

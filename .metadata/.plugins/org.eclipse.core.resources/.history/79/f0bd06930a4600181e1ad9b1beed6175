@@ -1,0 +1,5 @@
+package com.heima.bean;
+
+public class Student {
+
+}

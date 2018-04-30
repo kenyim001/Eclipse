@@ -1,0 +1,6 @@
+drivername=oracle.jdbc.driver.OracleDriver
+url=jdbc:oracle:thin:@127.0.0.1:1521:orcl
+username=scott
+password=tiger
+maxactive=1
+maxwait=5000

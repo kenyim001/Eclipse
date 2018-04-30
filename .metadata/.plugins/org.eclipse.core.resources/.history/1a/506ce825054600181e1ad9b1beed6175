@@ -1,0 +1,20 @@
+package com.heima.util;
+
+import javax.swing.text.Document;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+public class JaxpUtils {
+
+	public static Document getDocument(){
+		
+		try {
+			DocumentBuilder db=DocumentBuilderFactory.newInstance().newDocumentBuilder();
+			Document document=db.parse("src/exam.xml");
+			returm document;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+}

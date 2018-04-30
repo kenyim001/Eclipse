@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+		#gg{
+			border:1px solid red;
+			height:500px;
+			background-color:red;
+		}
+			#gg input{
+			float:right;
+			margin:10px;
+			}
+	</style>
+	<script src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$("#gg :button").click(function(){
+			$("#gg").slideUp(600);
+		}); 
+		setTimeout(function(){
+			$("#gg :button").trigger("click");
+		},500);
+	});
+	
+	</script>
+		
+</head>
+<body>
+		<div id="gg">
+				<input type="button" value="x"/>
+		
+		</div>
+		
+		
+</body>
+</html>

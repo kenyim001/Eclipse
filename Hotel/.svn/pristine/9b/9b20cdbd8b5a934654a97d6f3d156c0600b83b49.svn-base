@@ -1,0 +1,401 @@
+<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Details</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Motel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />	
+<script src="js/jquery-1.11.1.min.js"></script>
+<!--webfonts-->
+<link href='http://fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.useso.com/css?family=Open+Sans:400,300italic,300,600' rel='stylesheet' type='text/css'>
+<!--//webfonts-->
+<script type="text/javascript" src="js/bootstrap.js"></script>
+
+<link href="css/details.css" rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/details.js"></script>
+
+<script type="text/javascript">
+
+//从offers传过去的值作为details房型和床型的下列选的默认值
+$(function(){
+	alert("wwwww");
+	var roomStyles=['标准房','商务房','豪华房','至尊套房'];
+	var index=roomStyles.indexOf("${offer.roomStyle}");
+	alert(index);
+	
+	$("#roomstyle").children().eq(index).attr("selected",true);
+	alert("zzz");
+});
+$(function(){
+	var bedStyles=['大床','双人床'];
+	var index=bedStyles.indexOf("${offer.bedStyle}");
+	$("#bedstyle").children().eq(index).attr("selected",true);
+});
+
+
+
+
+	//检查验证码 发送异步请求
+	/* $(function(){
+		$("#checkcode").blur(function(){
+			if($("#checkcode").val().length!=5){
+				$("#errormsg").html("验证码输入有误");
+				return;
+			}
+			
+			$.getJSON("checkcode.do",{"number":$("#checkcode").val()},function(result){
+				if(result.error_code){
+					$("#errormsg").html(result.error_code);
+				}else{
+					$("#errormsg").html("");
+				}
+			});
+		});
+	}); */
+	
+	
+	
+	
+</script>
+</head>
+<body>
+<!-- banner -->
+	<div class="banner1">
+		<div class="header">
+			<div class="container">
+				<div class="logo">
+					<h1><a href="index.html"><b>BZ酒店</b></a></h1>
+				</div>
+					<nav class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<!--/.navbar-header-->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li><a href="index.do" >主页</a></li>
+								<li><a href="rooms.do">房间</a></li>
+								<li><a href="offersUI.do">优惠</a></li>
+								<li><a href="shortcodes.html">XXX</a></li>
+								<li><a href="signin.html">登录</a></li>
+								<li><a href="contact.html">联系</a></li>
+							</ul>
+						</div>
+						<!--/.navbar-collapse-->
+					</nav>
+				<div class="search-box">
+					<div id="sb-search" class="sb-search">
+						<form>
+							<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+							<input class="sb-search-submit" type="submit" value="">
+							<span class="sb-icon-search"> </span>
+							</form>
+					</div>
+				</div>
+					<div class="clearfix"> </div>
+
+				<!-- search-scripts -->
+					<script src="js/classie.js"></script>
+					<script src="js/uisearch.js"></script>
+					<script>
+						new UISearch( document.getElementById( 'sb-search' ) );
+					</script>
+				<!-- //search-scripts -->
+
+			</div>
+		</div>
+	</div>		
+		<!-- banner -->
+<!-- details -->
+	<div class="details">
+		<div class="container">
+			
+			<div class="booking-form">
+				<form>
+				<div class="col-md-6">
+				
+						
+								
+								 
+						<h5>姓名</h5>
+						<input type="text" value="" id="name" class="information"/> 
+						
+						<h5>身份证</h5>
+						<input type="text" value="" id="idnumber" class="information"/>
+						<span class="errormsg" id="idnumbercheck"></span> 
+						 
+						<h5>电子邮箱</h5>
+						<input type="text" value="" id="email" class="information"/> 
+						<span class="errormsg" id="emailcheck"></span> 
+						
+						<h5>移动电话</h5>
+						<input type="text" value="" id="phone" class="information"/>
+						<span class="errormsg" id="phonecheck"></span><br/>
+						
+						<div class="offerinformations">
+							<span>房型</span>
+							<select id="roomstyle" class="arrival">
+								<option>标准房</option>
+								<option>商务房</option>
+								<option>豪华房</option>
+								<option>至尊套房</option>
+							</select>
+							<span>床型</span>
+							<select id="bedstyle" class="arrival">
+								<option>大床</option>
+								<option>双人床</option>
+							</select>
+							<br/>
+							<div id="pricearea">
+								<span>${offer.roomStyle}￥</span>
+								<input value="${offer.originalPrice}" class="showprice" readonly/>
+							</div>
+							
+						</div>
+						
+					</div>
+					
+					<div class="col-md-6">
+					
+						<h5>入住时间</h5>
+						<select class="arrival">
+							<option>00:00</option>
+							<option>01:00</option>
+							<option>02:00</option>
+							<option>03:00</option>
+							<option>04:00</option>
+							<option>05:00</option>
+							<option>06:00</option>
+							<option>08:00</option>
+							<option>09:00</option>
+							<option>10:00</option>
+							<option>11:00</option>
+							<option>12:00</option>
+							<option>13:00</option>
+							<option>14:00</option>
+							<option>15:00</option>
+							<option>16:00</option>
+							<option>17:00</option>
+							<option>18:00</option>
+							<option>19:00</option>
+							<option>20:00</option>
+							<option>21:00</option>
+							<option>22:00</option>
+							<option>23:00</option>
+							<option>24:00</option>
+						</select> 
+						<select class="arrival">
+							<option>01日</option>
+							<option>02日</option>
+							<option>03日</option>
+							<option>04日</option>
+							<option>05日</option>
+							<option>06日</option>
+							<option>07日</option>
+							<option>08日</option>
+							<option>09日</option>
+							<option>10日</option>
+							<option>11日</option>
+							<option>12日</option>
+							<option>13日</option>
+							<option>14日</option>
+							<option>15日</option>
+							<option>16日</option>
+							<option>17日</option>
+							<option>18日</option>
+							<option>19日</option>
+							<option>20日</option>
+							<option>21日</option>
+							<option>22日</option>
+							<option>23日</option>
+							<option>24日</option>
+							<option>25日</option>
+							<option>26日</option>
+							<option>27日</option>
+							<option>28日</option>
+							<option>29日</option>
+							<option>30日</option>
+							<option>31日</option>
+						</select> 
+						<select class="arrival">
+							<option>01月</option>
+							<option>02月</option>
+							<option>03月</option>
+							<option>04月</option>
+							<option>05月</option>
+							<option>06月</option>
+							<option>07月</option>
+							<option>08月</option>
+							<option>09月</option>
+							<option>10月</option>
+							<option>11月</option>
+							<option>12月</option>
+						</select>  
+						<select class="arrival">
+							<option>2017</option>
+							<option>2018</option>
+						</select>
+						<h5>离店时间</h5>
+						<select class="arrival">
+							<option>00:00</option>
+							<option>01:00</option>
+							<option>02:00</option>
+							<option>03:00</option>
+							<option>04:00</option>
+							<option>05:00</option>
+							<option>06:00</option>
+							<option>08:00</option>
+							<option>09:00</option>
+							<option>10:00</option>
+							<option>11:00</option>
+							<option>12:00</option>
+							<option>13:00</option>
+							<option>14:00</option>
+							<option>15:00</option>
+							<option>16:00</option>
+							<option>17:00</option>
+							<option>18:00</option>
+							<option>19:00</option>
+							<option>20:00</option>
+							<option>21:00</option>
+							<option>22:00</option>
+							<option>23:00</option>
+							<option>24:00</option>
+						</select> 
+						<select class="arrival">
+							<option>01日</option>
+							<option>02日</option>
+							<option>03日</option>
+							<option>04日</option>
+							<option>05日</option>
+							<option>06日</option>
+							<option>07日</option>
+							<option>08日</option>
+							<option>09日</option>
+							<option>10日</option>
+							<option>11日</option>
+							<option>12日</option>
+							<option>13日</option>
+							<option>14日</option>
+							<option>15日</option>
+							<option>16日</option>
+							<option>17日</option>
+							<option>18日</option>
+							<option>19日</option>
+							<option>20日</option>
+							<option>21日</option>
+							<option>22日</option>
+							<option>23日</option>
+							<option>24日</option>
+							<option>25日</option>
+							<option>26日</option>
+							<option>27日</option>
+							<option>28日</option>
+							<option>29日</option>
+							<option>30日</option>
+							<option>31日</option>
+						</select> 
+						<select class="arrival">
+							<option>01月</option>
+							<option>02月</option>
+							<option>03月</option>
+							<option>04月</option>
+							<option>05月</option>
+							<option>06月</option>
+							<option>07月</option>
+							<option>08月</option>
+							<option>09月</option>
+							<option>10月</option>
+							<option>11月</option>
+							<option>12月</option>
+						</select> <select class="arrival">
+
+							<option>2017</option>
+							<option>2018</option>
+						</select>
+						<h5 class="personCount">人数</h5>
+						<input min="1" max="2" type="number" id="quantity" name="quantity"
+							value="1" class="form-control input-small">
+						<h5>备注要求</h5>
+						<textarea value="" id="remarktextarea"></textarea>
+						
+						<h5>验证码</h5>
+						<input type="text" id="checkcode" name="checkcode"/> 
+						<span class="errormsg" id="errormsg"></span>
+						<div>
+							<img id="img1" src="generatecheckcode.do" /> 
+							<a href="javascript:;" onclick="document.getElementById('img1').src='generatecheckcode.do?' + Math.random();">看不清，换一个</a>
+						</div>
+						<input type="submit" value="提交"/> 
+						<input type="reset" value="重置"/>
+			 	</div>
+				</form>
+			</div>
+		 </div>
+	</div>
+<!-- details -->
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="col-md-2 deco">
+				<h4>导航</h4>
+				<li><a href="index.html">主页</a></li>
+				<li><a href="shortcodes.html">XXX</a></li>
+				<li><a href="sigin.html">登录</a></li> 
+				<li><a href="contact.html">联系我们</a></li>
+			</div>
+			<div class="col-md-2 deco">
+				<h4>链接</h4> 
+				<li><a href="#">影院</a></li>
+				<li><a href="#">美食</a></li>
+				<li><a href="#">购物</a></li>
+			</div>
+			<div class="col-md-2 deco">
+				<h4>分享</h4>
+				<div class="soci"> 
+					<li><a href="#" ><img src="images/weixin.jpg"></i></a></li>
+					<li><a href="#" ><img src="images/weibo.jpg"> </i></a></li>
+					<li><a href="#" ><img src="images/qq.jpg"> </i></a></li>
+				</div>
+			</div>
+			<div class="col-md-3 cardss">
+				<h4>支付方式</h4>
+				<li><i class="visa"></i></li>
+				<li><i class="ma"></i></li>
+				<li><i class="paypal"></i></li>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="col-md-3 pos">
+			<h4>订阅</h4>
+					   <form method="post">
+						 <input type="text" class="textbox" value="电子邮箱" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Email';}">
+						 <div class="smt">
+							<input type="submit" value="确定">
+						 </div>
+					   </form>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<div class="footer-bottom">
+			<div class="container">
+				<p>Copyright &copy; 2017 BZ No.1
+</p>
+			</div>
+		</div>
+	<!-- footer -->
+</body>
+</html>

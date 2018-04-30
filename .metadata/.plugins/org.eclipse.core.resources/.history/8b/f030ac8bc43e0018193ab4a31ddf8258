@@ -1,0 +1,12 @@
+package ¿Îºóday06;
+
+public class test {
+	public static void main(String[] args) {
+		String[] a={"'2018-03-09 15:28:45.733'","'2018-03-09 15:16:45.733'","'2018-03-09 15:07:45.733'"};
+		String[] b={"6035","6023","6022"};
+		for (int i = 0; i < a.length; i++) {
+			System.out.println("update EventOptLog set OptDate="+a[i]+"where OptLogID="+b[i]);
+		}
+	}
+
+}

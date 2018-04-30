@@ -1,0 +1,75 @@
+package com.heima.ui;
+
+import java.util.Scanner;
+
+import com.heima.bean.Student;
+import com.heima.dao.StudentDao;
+
+public class StudentUI{
+
+	static Scanner scan=new Scanner(System.in);
+	static StudentDao dao=new StudentDao();
+	
+	public static void main(String[] args) {
+		System.out.println("请选择操作： a)添加用户  b)查询学生  c)删除学生");
+	
+	String op=scan.next();
+	
+	
+	if ("a".equalsIgnoreCase(op)) {
+		addStudent();
+	}else if("b".equalsIgnoreCase(op)){
+		findStudentByExamId();
+	}else if("c".equalsIgnoreCase(op)){
+		removeStudentByname();
+	}else if("c".equalsIgnoreCase(op)){
+		System.out.println("没有此种操作");
+	}
+	}
+	private static void removeStudentByname() {
+		System.out.println("请输入学生的名字");
+		String name=scan.next();
+		boolean flag=dao.delete(name);
+		if(flag)
+			System.out.println("--------删除成功--------");
+		else
+			System.out.println("--------删除 不成功--------");
+
+	}
+
+	private static void findStudentByExamId() {
+		System.out.println("输入准考证号");
+		String examid=scan.next();
+		Student stu=dao.findByExamId(examid);
+		
+		if(stu !=null)
+			System.out.println(stu);
+		else
+			System.out.println("此学生不存在");
+	}
+
+	private static void addStudent() {
+		Student s=new Student();
+		System.out.println("请输入姓名 ");
+		String name=scan.next();
+		s.setName(name);
+		
+		System.out.println("请输入身份证号");
+		String idcard=scan.next();
+		s.setIdcard(idcard);
+		
+		System.out.println("请输入准考证号");
+		String examid=scan.next();
+		s.setExamid(examid);
+		
+		System.out.println("请输入地址 ");
+		String location=scan.next();
+		s.setLocation(location);
+		
+		System.out.println("请输入分数 ");
+		String grade=scan.next();
+		s.setGrade(Float.parseFloat(grade));
+		
+		return s;
+	}
+}

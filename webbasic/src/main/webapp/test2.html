@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script src="js/jquery-1.11.1.js"></script>
+<style>
+		div {
+			border: 1px solid red;
+			width: 1500px;
+			height: 500px;
+			background-color: red;
+			margin: 1px;
+		}
+		
+		img {
+			width: 30px;
+			height: 30px;
+			position:relative;
+		}
+</style>
+
+	<script type="text/javascript">
+
+	$(function() {	
+		var a = 0;
+			setInterval(function() {
+				if (a < 1470) {
+					var b=Math.random()*50+50;
+					console.log(b);
+					a+=b;
+				};
+				$("#d1").animate({
+					"left" : a + "px"
+				}, 2000);
+			}, 2000);
+	});
+		
+
+	$(function() {	
+		var a = 0;
+			setInterval(function() {
+				if (a < 1470) {
+					var b=Math.random()*50+50;
+					console.log(b);
+					a+=b;
+				};
+				$("#d2").animate({
+					"left" : a + "px"
+				}, 2000);
+			}, 2000);
+	});
+	
+	$(function() {	
+		var a = 0;
+			setInterval(function() {
+				if (a < 1470) {
+					var b=Math.random()*50+50;
+					console.log(b);
+					a+=b;
+				};
+				$("#d3").animate({
+					"left" : a + "px"
+				}, 2000);
+			}, 2000);
+	});
+	
+	$(function() {	
+		var a = 0;
+			setInterval(function() {
+				if (a < 1470) {
+					var b=Math.random()*50+50;
+					console.log(b);
+					a+=b;
+				};
+				$("#d4").animate({
+					"left" : a + "px"
+				}, 2000);
+			}, 2000);
+	});
+	
+	$(function() {	
+		var a = 0;
+			setInterval(function() {
+				if (a < 1470) {
+					var b=Math.random()*50+50;
+					console.log(b);
+					a+=b;
+				};
+				$("#d5").animate({
+					"left" : a + "px"
+				}, 2000);
+			}, 2000);
+	});
+	
+
+		
+	</script>
+<body>
+	<div>
+		<img src="images/01.jpg" id="d1"/><br>
+		<img src="images/01.jpg" id="d2"/><br>
+		<img src="images/01.jpg" id="d3" /><br>
+		<img src="images/01.jpg" id="d4" /><br>
+		<img src="images/01.jpg" id="d5"  /><br>
+	</div>
+</body>
+</html>

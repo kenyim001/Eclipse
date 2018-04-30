@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="dao.DeptDAO">
+
+<!--id要求唯一 
+		parameterType:参数类型，这里填写实体类的完整的名字
+ -->
+<insert id="save" parameterType="entity.Dept">
+	insert into t_dept_yjh values(t_dept_yjh_seq.nextval,#{deptName},#{loc})
+</insert>
+<select id="findAll" resultType="entity.Dept">
+	select * from t_dept_yjh
+</select>
+<select id="findById" parameterType="int" resultType="entity.Dept">
+	select * from t_dept_yjh where id=#{id}
+</select>
+<update id="modify" parameterType="entity.Dept">
+	update t_dept_yjh set deptName=#{deptName},loc=#{loc} where id=#{id}
+</update>
+<delete id="delete">
+	delete from t_dept_yjh where id=#{id1}
+</delete>
+<select id="findById2" parameterType="int" resultType="map">
+	select * from t_dept_yjh where id=#{id}
+</select>
+
+  <resultMap type="entity.Dt" id="dtResultMap">
+	<result property="dtName" column="deptName"/>
+</resultMap> 
+	
+ <select id="findById3" parameterType="int" resultMap="dtResultMap">	
+	select * from t_dept_yjh where id=#{id} 
+</select>
+</mapper>

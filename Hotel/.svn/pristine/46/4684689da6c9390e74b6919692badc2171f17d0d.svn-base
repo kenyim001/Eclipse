@@ -1,0 +1,19 @@
+package cn.tedu.hotel.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
+import cn.tedu.hotel.common.web.PageObject;
+import cn.tedu.hotel.entity.Offer;
+
+public interface OffersDAO {
+	//获取Offers
+	public List<Offer> findAll(@Param("pageObject")PageObject pageObject);
+	
+	
+	//获取roomStyle和bedStyle组的总记录数
+	public int getRowCount();
+	
+	
+}

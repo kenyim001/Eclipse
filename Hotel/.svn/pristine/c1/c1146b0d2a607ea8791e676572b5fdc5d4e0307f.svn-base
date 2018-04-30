@@ -1,0 +1,37 @@
+package cn.tedu.hotel.controller;
+
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import cn.tedu.hotel.entity.Order;
+import cn.tedu.hotel.service.HotelService;
+
+@Controller
+
+public class HotelController {
+	
+	@Resource
+	private HotelService hotelService;
+	
+	@RequestMapping("/hotelUI")
+	public String hotelUI(){
+		System.out.println("hotelUI()");
+		
+		/*return "hotel/order";*/
+		return "order";
+	}
+	
+	@RequestMapping("/findOrderMsg")
+	@ResponseBody
+	public List<Order> findOrderMsg(){
+		List<Order> list=hotelService.findOrder();
+		System.out.println(list);
+		return list;
+	}
+}

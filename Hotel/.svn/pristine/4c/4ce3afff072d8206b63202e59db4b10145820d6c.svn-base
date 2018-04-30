@@ -1,0 +1,41 @@
+package test;
+
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import cn.tedu.hotel.common.web.PageObject;
+import cn.tedu.hotel.dao.OffersDAO;
+import cn.tedu.hotel.entity.Offer;
+
+public class TestOffers {
+	private OffersDAO offersdao;
+	@Before
+	public void init(){
+		String config="spring.xml";
+		ApplicationContext ac=new ClassPathXmlApplicationContext(config);
+		offersdao=ac.getBean("offersDAO",OffersDAO.class);
+	}
+	
+	@Test
+	//测试 Offers findAll()方法
+	public void findAll(){
+		PageObject pageObject=new PageObject();
+		pageObject.setRowCount(8);
+		List<Offer> offers=offersdao.findAll(pageObject);
+		for(Offer o:offers){
+			System.out.println(o);
+		}
+	}
+	
+	@Test
+	//测试 Offers getRowsCount()方法
+	public void getRowsCount(){
+		int rowsCount=offersdao.getRowCount();
+		System.out.println(rowsCount);
+	}
+	
+}

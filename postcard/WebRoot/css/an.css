@@ -1,0 +1,70 @@
+body,div,a{	padding:0;	margin:0;}
+
+body {
+    color: #555555; background-color:#fff;
+    font-family: Arial,Helvetica,Helvetica Neue,Verdana,sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    text-rendering: optimizelegibility;
+	
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.detailimg { width:147px;
+             height:150px;
+}
+
+@charset "utf-8";
+
+
+.wall-of-buttons { width: 100%; height: 200px; text-align: center; 
+			 margin:50px auto; padding:10px;
+			 
+			 }
+.wall-of-buttons a.button { display: inline-block; margin: 0 10px 9px 0; } 
+
+
+	.button {
+		background: #222; 
+		display: inline-block; 
+		padding: 5px 15px 6px; 
+		color: #fff !important; 
+		font-size: 13px; font-weight: bold; line-height: 1; text-decoration: none; 
+		-moz-border-radius: 5px; -webkit-border-radius: 5px; 
+		-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25); -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25); 
+		text-shadow: 0 -1px 1px rgba(0,0,0,0.25); 
+		border-bottom: 1px solid rgba(0,0,0,0.25); position: relative; 
+		cursor: pointer; 
+		overflow: visible; width: auto; }
+	button::-moz-focus-inner { border: 0; padding: 0; }
+	
+	.button:hover { background-color: #111; color: #fff; }
+	.button:active { -webkit-transform: translateY(1px); -moz-transform: translateY(1px); }
+
+	.small.button { font-size: 11px; }
+
+	.large.button { font-size: 14px; padding: 8px 19px 9px; }
+
+	.green.button { background-color: #91bd09; }
+	.green.button:hover { background-color: #749a02; }
+	.blue.button { background-color: #2daebf; }
+	.blue.button:hover { background-color: #007d9a; }
+	.red.button { background-color: #e33100; }
+	.red.button:hover { background-color: #872300; }
+	.magenta.button{ background-color: #a9014b; }
+	.magenta.button:hover { background-color: #630030; }
+	.orange.button { background-color: #ff5c00; }
+	.orange.button:hover { background-color: #d45500; }
+	.orangellow.button { background-color: #ffb515; }
+	.orangellow.button:hover { background-color: #fc9200; }
+	
+	.white.button { background-color: #fff; border: 1px solid #ccc; color: #666 !important; font-weight: normal; text-shadow: 0 1px 1px rgba(255,255,255,1); }
+	.white.button:hover { background-color: #eee; }
+	
+
+	.strike.button	{background-color: #4ADFC1}
+	.strike.button:hover {background-color: #39ceb0}
+	
+
+	.secondary.button { background: #fff; color: #555 !important; text-shadow: 0 1px 1px rgba(255,255,255,0.5); border: 1px solid #bbb; -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1); -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+	.secondary.button:hover { background-color: #eee; color: #444 !important; border-color: #999; }

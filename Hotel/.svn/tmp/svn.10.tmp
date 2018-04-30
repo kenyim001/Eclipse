@@ -1,0 +1,184 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!-- <!DOCTYPE HTML> -->
+<html>
+<head>
+<title>Details</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Motel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />	
+<script src="js/jquery-1.11.1.min.js"></script>
+<!--webfonts-->
+<link href='http://fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.useso.com/css?family=Open+Sans:400,300italic,300,600' rel='stylesheet' type='text/css'>
+   <!--//webfonts-->
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/hotel_order.js"></script>
+<script type="text/javascript" src="js/page.js"></script>
+<script type="text/javascript" src="js/login_head.js"></script>
+</head>
+<body>
+<!-- banner -->
+	<div class="banner1">
+		<div class="header">
+			<div class="container">
+				<div class="logo">
+					<h1><a href="index.html">琳琅天上</a></h1>
+				</div>
+					<nav class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<!--/.navbar-header-->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li><a href="index.do">主页</a></li>
+								<li><a href="rooms.do">房间</a></li>
+								<li><a href="offersUI.do">优惠</a></li>
+								<li><a href="hotelUI.do">预约信息</a></li>
+								<li><a href="toLogin.do">登录</a></li>
+								<li><a href="contact.html">联系</a></li>
+							</ul>
+						</div>
+						<!--/.navbar-collapse-->
+					</nav>
+				<!-- <div class="search-box">
+					<div id="sb-search" class="sb-search">
+						<form>
+							<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+							<input class="sb-search-submit" type="submit" value="">
+							<span class="sb-icon-search"> </span>
+							</form>
+					</div>
+				</div> -->
+				
+				
+					<%@ include file="common/login_head.jsp" %>
+					<div class="clearfix"> </div>
+
+				<!-- search-scripts -->
+					<script src="js/classie.js"></script>
+					<script src="js/uisearch.js"></script>
+					<script>
+						new UISearch( document.getElementById( 'sb-search' ) );
+					</script>
+				<!-- //search-scripts -->
+
+			</div>
+		</div>
+	</div>		
+		<!-- banner -->
+<!-- details -->
+	<div class="details">
+		<form method="post" id="queryFormId">
+			<div class="booking-form">
+			<h1>查询管理系统</h1>	
+			<div class="row page-search">
+			 <div class="col-md-12">
+				<ul class="list-unstyled list-inline">
+					<li><input type="text" id="searchNameId" class="form-control"placeholder="客人姓名"></li>
+					<li><select id="searchValidId" class="form-control" style="width:80px;">
+						<!--  	<option value="1">选择状态</option> -->
+							<option value="1">启用</option>
+							<option value="0">禁用</option>
+					</select></li>
+					<li class='O1'><button type="button" class="btn btn-primary btn-search" >查询</button></li>					
+					<li class='O3'><button type="button" class="btn btn-primary btn-invalid">禁用</button></li>
+					<li class='O4'><button type="button" class="btn btn-primary btn-valid">启用</button></li>
+				</ul>
+			  </div>
+			</div>
+					<table class="table">
+						<thead>
+						<tr>	
+						  <th>订单状态</th>					  
+						  <th>订单号</th>
+						  <th>姓名</th>
+						  <th>性别</th>
+						  <th>身份证号</th>
+						  <th>手机号</th>
+						  <th>入住时间</th>
+						  <th>离店时间</th>
+						  <th>优惠折扣</th>
+						  <th>支付状态</th>
+						  <th>消费次数</th>
+						  <th>原价</th>
+						  <th>备注</th>
+						  <th>操作</th>
+						  </tr>
+						</thead>
+						<tbody id="hotelMsg"></tbody>
+					</table>
+			</div>
+			<div class="pages" id="pages">
+			<span class="pageCurrent"></span>
+			<a class="first">首页</a>
+			<a class="pre">上一页</a>
+			<span class="num"></span>
+			<a class="next">下一页</a>
+			<a class="last">尾页</a>
+		</div>	
+		</form>
+	</div>
+<!-- details -->
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="col-md-2 deco">
+				<h4>导航</h4>
+				<li><a href="index.html">主页</a></li>
+				<li><a href="shortcodes.html">预订</a></li>
+				<li><a href="sigin.html">登录</a></li> 
+				<li><a href="contact.html">联系我们</a></li>
+			</div>
+			<div class="col-md-2 deco">
+				<h4>链接</h4> 
+				<li><a href="#">影院</a></li>
+				<li><a href="#">美食</a></li>
+				<li><a href="#">购物</a></li>
+			</div>
+			<div class="col-md-2 deco">
+				<h4>分享</h4>
+				<div class="soci">
+					<li><a href="#" ><img src="images/weixin.jpg"></i></a></li>
+					<li><a href="#" ><img src="images/weibo.jpg"> </i></a></li>
+					<li><a href="#" ><img src="images/qq.jpg"> </i></a></li>
+				</div>
+			</div>
+			<div class="col-md-3 cardss">
+				<h4>支付方式</h4>
+				<li><i class="visa"></i></li>
+				<li><i class="ma"></i></li>
+				<li><i class="paypal"></i></li>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="col-md-3 pos">
+			<h4>订阅</h4>
+					   <form method="post">
+						 <input type="text" class="textbox" value="电子邮箱" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+						 <div class="smt">
+							<input type="submit" value="确定">
+						 </div>
+					   </form>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<div class="footer-bottom">
+			<div class="container">
+				<p>Copyright &copy; 2017 琳琅天上</p>
+			</div>
+		</div>
+	<!-- footer -->
+</body>
+</html>

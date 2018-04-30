@@ -1,0 +1,222 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>房间</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Motel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />	
+<script src="js/jquery-1.11.1.min.js"></script>
+<!--webfonts-->
+<link href='http://fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.useso.com/css?family=Open+Sans:400,300italic,300,600' rel='stylesheet' type='text/css'>
+   <!--//webfonts-->
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/rooms_bz.js"></script>
+
+<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+
+<link rel='stylesheet' type='text/css' href="css/information_form.css" />
+<script type="text/javascript" src="js/offers_load.js"></script>
+
+<script type="text/javascript" src="js/offers.js"></script>
+<script type="text/javascript" src="js/information_form.js"></script>	
+<script type="text/javascript" src="js/login_head.js"></script>
+
+
+
+
+
+</head>
+<body>
+<!-- banner -->
+	<div class="banner1">
+		<div class="header">
+			<div class="container">
+				<div class="logo">
+					<h1><a href="index.html"><b>BZ酒店</b></a></h1>
+				</div>
+					<nav class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<!--/.navbar-header-->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								
+								<li><a href="index.do">主页</a></li>
+								<li class="active"><a href="rooms.do">房间</a></li>
+								<li><a href="offersUI.do">优惠</a></li>
+								<li><a href="userUI.do">预约信息</a></li>
+								<li><a href="toLogin.do">登录</a></li>
+								<li><a href="hotelUI.do">后台</a></li>
+							</ul>
+						</div>
+						<!--/.navbar-collapse-->
+					</nav>
+				<!-- <div class="search-box">
+					<div id="sb-search" class="sb-search">
+						<form>
+							<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+							<input class="sb-search-submit" type="submit" value="">
+							<span class="sb-icon-search"> </span>
+							</form>
+					</div>
+				</div> -->
+				
+				
+				
+					<%@ include file="common/login_head.jsp" %>
+				
+					<div class="clearfix"> </div>
+
+				<!-- search-scripts -->
+					<script src="js/classie.js"></script>
+					<script src="js/uisearch.js"></script>
+					<script>
+						new UISearch( document.getElementById( 'sb-search' ) );
+					</script>
+				<!-- //search-scripts -->
+
+			</div>
+		</div>
+	</div>		
+		<!-- banner -->
+<!-- single -->
+	<div class="single">
+		<div class="container">
+			<div class="single-top">
+				<div class="col-md-6 single-left">
+					<a href="details.html"><img src="img/cj_01.jpg" class="img-responsive" alt=""></a>
+				</div>
+				<div class="col-md-6 single-right">
+					<h3><a href="details.html"><span  id="h3_rooms_sp1_business_bz"></span></a></h3>
+					
+					<p>
+						尊享70平方米的宽敞空间，位于行政樓层，设有独立起居室，配上迷人的翠绿山景，
+						是尊贵客人的不二之选。客人更可使用行政贵宾廊的尊贵服务，
+						位于59楼的行政贵宾廊为尊贵的住客提供最为贴心的个人化服务，
+						包括私人登记入住、免费早餐、下午茶及黄昏鸡尾酒。
+					</p>
+					<h5>*科技：国内/国际长途电话，有线频道，卫星频道，液晶电视机，电话</h5>
+					<h5>*设施：书桌，多种规格电源插座，空调，衣柜/衣橱，针线包，床具，鸭绒被，WIFI覆盖，光线上网</h5>
+					<h6>为您而生，畅想生活</h6>
+					<div class="sinbt">
+						<a class="hvr-shutter-in-horizontal" href="javascript:;">预订</a>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="single-top">
+				<div class="col-md-6 single-right">
+					<h3><a href="details.html"><span  id="h3_rooms_sp2_luxury_bz"></span></a></h3>
+					<p>客房面积在29至32平米之间的豪华房，拥有迷人的城市景观。客房中提供免费有线与无线网络，
+					您还能从手提电脑或任何移动设备上安全地进行远程打印。
+					各种现代的设施与用品让您如同在家中一般方便，需要工作时也能保持高效专注。
+					特大床配Serta Prefect Sleeper床垫，确保为您带来难忘的舒适体验。</p>
+					<h5>*科技：国内/国际长途电话，有线频道，卫星频道，液晶电视机，电话</h5>
+					<h5>*设施：书桌，多种规格电源插座，空调，冰箱，衣柜/衣橱，针线包，床具，鸭绒被，WIFI覆盖，光线上网</h5>
+					<h6>您住的舒心才是我们最大的放心!</h6>
+					<div class="sinbt">
+						<a class="hvr-shutter-in-horizontal" href="javascript:;">预订</a>
+					</div>
+				</div>
+				<div class="col-md-6 single-left">
+					<a href="details.html"><img src="img/hhf_01.jpg" class="img-responsive" alt=""></a>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="single-top">
+				<div class="col-md-6 single-left">
+					<a href="details.html"><img src="img/zt_04.jpg" class="img-responsive" alt=""></a>
+				</div>
+				<div class="col-md-6 single-right">
+					<h3><a href="details.html"><span id="h3_rooms_sp3_flatlet_bz"></span></a></h3>
+					<p>
+					入住60平方米的开放式套房，体验开放式空间给您带来的自由与放松。舒适的大床，宽敞的阳台，
+					独立的沙发区及娱乐区，布局精妙，为您带去卓越感受。透过全景落地玻璃窗，
+					在深浸式浴缸里尽情放松，无敌湖景尽收眼底。入住高级套房的客人还可享受行政楼层礼遇，
+					包括免费2件衣服的熨烫（每次入住），在行政酒廊享用美味的早餐及欢乐时光，
+					2小时的行政楼层会议室使用。
+					</p>
+					<h5>*科技：国内/国际长途电话，有线频道，卫星频道，液晶电视机，电话</h5>
+					<h5>*设施：书桌，多种规格电源插座，空调，冰箱，衣柜/衣橱，针线包，床具，鸭绒被，WIFI覆盖，光线上网</h5>
+					<h6>高端大气的场所，展现您尊贵的一面</h6>
+					<div class="sinbt">
+						<a class="hvr-shutter-in-horizontal" href="javascript:;">预订</a>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		 </div>
+	</div>
+	
+	<div>
+		<%@include file="common/modal.jsp" %>
+	</div>
+	
+	
+<!-- registration -->
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="col-md-2 deco">
+				<h4>导航</h4>
+				<li><a href="index.html">主页</a></li>
+				<li><a href="shortcodes.html">XXX</a></li>
+				<li><a href="sigin.html">登录</a></li> 
+				<li><a href="contact.html">联系我们</a></li>
+			</div>
+			<div class="col-md-2 deco">
+				<h4>链接</h4> 
+				<li><a href="#">影院</a></li>
+				<li><a href="#">美食</a></li>
+				<li><a href="#">购物</a></li>
+			</div>
+			<div class="col-md-2 deco">
+				<h4>分享</h4>
+				<div class="soci"> 
+					<li><a href="#" ><img src="images/weixin.jpg"></i></a></li>
+					<li><a href="#" ><img src="images/weibo.jpg"> </i></a></li>
+					<li><a href="#" ><img src="images/qq.jpg"> </i></a></li>
+				</div>
+			</div>
+			<div class="col-md-3 cardss">
+				<h4>支付方式</h4>
+				<li><i class="visa"></i></li>
+				<li><i class="ma"></i></li>
+				<li><i class="paypal"></i></li>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="col-md-3 pos">
+			<h4>订阅</h4>
+					   <form method="post">
+						 <input type="text" class="textbox" value="电子邮箱" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Email';}">
+						 <div class="smt">
+							<input type="submit" value="确定">
+						 </div>
+					   </form>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<div class="footer-bottom">
+			<div class="container">
+				<p>Copyright &copy; 2017 BZ No.1
+</p>
+			</div>
+		</div>
+	<!-- footer -->
+</body>
+</html>

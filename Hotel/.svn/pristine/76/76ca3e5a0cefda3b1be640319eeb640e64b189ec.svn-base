@@ -1,0 +1,9 @@
+package cn.tedu.hotel.service;
+
+import java.util.Map;
+
+import cn.tedu.hotel.common.web.PageObject;
+
+public interface OffersService {
+	public Map<String, Object> findAll(PageObject pageObject);
+}

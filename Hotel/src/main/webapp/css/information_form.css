@@ -1,0 +1,27 @@
+.form-horizontal .form-group input,.form-horizontal .form-group textarea {
+	width: 120%;
+}
+
+.form-horizontal {
+	padding: 10px;
+}
+
+#roomStyle_form,#bedStyle_form,#price_form,#totalprice_form {
+	width: 25%;
+	display: inline-block;
+	border: 0;
+}
+
+#IDNumberId_error,#telephoneId_error,#emailId_error,#personCountId_error {
+	color: red;
+}
+
+.error {
+	color: #f00;
+	font-size: 16px;
+	font-weight: normal;
+}
+
+#genderId {
+	width: 15%;
+}

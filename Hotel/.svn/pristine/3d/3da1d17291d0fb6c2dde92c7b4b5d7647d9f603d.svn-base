@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.tedu.hotel.dao.HotelDAO">
+	<select id="findByTel" parameterType="String" resultType="cn.tedu.hotel.entity.User">
+		SELECT * FROM bzhotel_subscriber WHERE telephone=#{tel}
+		
+	</select>
+	<select id="findByID" parameterType="String" resultType="cn.tedu.hotel.entity.Room">
+		SELECT * FROM bzhotel_room WHERE IDNumber=#{id}
+	</select>
+	
+	<insert id="saveUser" parameterType="cn.tedu.hotel.entity.User">
+		INSERT INTO bzhotel_subscriber VALUES (#{name},#{gender},#{IDNumber},#{telephone},
+			#{email},#{orderNumber},#{remarks},#{discount},#{memberLevel},#{accountNumber},
+			#{password},#{consumeCount},#{paymentStatus}) 
+	</insert>
+	
+	<insert id="saveRoom" parameterType="cn.tedu.hotel.entity.Room">
+		INSERT INTO bzhotel_room (roomNo,roomStyle,bedStyle,personCount,originalPrice,state,IDNumber,remarks) VALUES (#{roomNo},#{roomStyle},#{bedStyle},#{personCount},
+			#{originalPrice},#{state},#{IDNumber},#{remarks}) 
+	</insert>
+	
+	<!-- 豹子 -->
+	<select id="findByRoomStyle" parameterType="String" resultType="cn.tedu.hotel.entity.Room">
+		select * from bzhotel_room WHERE roomstyle=#{roomstyle}
+	</select>
+	
+</mapper>

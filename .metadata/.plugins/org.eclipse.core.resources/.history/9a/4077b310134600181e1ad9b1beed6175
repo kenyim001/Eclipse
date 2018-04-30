@@ -1,0 +1,47 @@
+package com.heima.dao;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+import com.heima.bean.Student;
+import com.heima.util.JaxpUtils;
+
+public class StudentDao {
+
+	public boolean add(Student student){
+		Document document=JaxpUtils.getDocument();
+		Element root=document.getDocumentElement();
+		Element stu=document.createElement("student");
+		Element nameE1=document.createElement("name");
+		Element locationE1=document.createElement("location");
+		Element gradeE1=document.createElement("grade");
+		
+		stu.setAttribute("examid",student.getExamid());
+		stu.setAttribute("idcard", student.getIdcard());
+		
+		nameE1.setTextContent(student.getName());
+		locationE1.setTextContent(student.getLoacation());
+		gradeE1.setTextContent(student.getGrade()+"");
+		
+		stu.appendChild(nameE1);
+		stu.appendChild(locationE1);
+		stu.appendChild(gradeE1);
+		
+		root.appendChild(stu);
+		
+		JaxpUtils.write2xml(document);
+		return true;
+		  
+		
+	}
+	public boolean delete(String mane){
+		
+		return false;
+		
+	}
+	
+	public String findByExamId(String examid) {
+		
+		return null;
+	}
+}

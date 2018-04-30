@@ -1,0 +1,114 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	border:0px;
+	margin:0px;
+  padding:0px;
+   list-style:none;}
+ body{
+ 	background:url(../images/body.jpg);
+ 	font-size:12px;
+ 	font-family:"微软雅黑";
+ 	}
+ 
+ #boxa{
+ 	width:400px;
+ 	margin:30px auto;
+ }
+ #boxa h1{
+ 	font-size:30px;
+ 	text-align:center;
+ 	color:white;
+ 	text-shadow:3px 5px 3px rgba(0,0,0,1); 
+ 	}
+#content{ width:800px;
+		  margin:0px auto}
+#form{ width:700px;
+       height:280px;
+	  
+	   overflow:hidden;}
+#form_a{  width:700px;
+          height:280px;
+		  background:url(../images/big_1.png)}
+#form_b{  width:700px;
+          height:280px;
+		  background:url(../images/big_2.png)}
+#form_c{ width:700px;
+          height:280px;
+		  background:url(../images/big_3.png)}
+#form_d{ width:700px;
+          height:280px;
+		  background:url(../images/big_4.png)}
+#form_e{ width:700px;
+          height:280px;
+		  background:url(../images/big_5.png)}
+.text{ width:240px;
+       height:200px;
+	   margin-top:30px;
+	   margin-left:100px;
+	   float:left}
+.text p{ width:240px;
+         height:30px;
+		 line-height:30px;
+		 margin:15px auto}
+.text input{ width:150px;
+             height:30px}
+.er{ width:235px;
+     height:235px;
+	 margin-top:20px;
+	 margin-right:30px;
+	 float:right;
+	 
+	}
+#picture{ width:800px;
+          height:100px;
+		  clear:left;
+		  margin:20px auto}
+#picture ul li{ list-style:none;
+                float:left;
+				width:120px;
+				height:90px;
+				margin:10px}
+#button{ width:560px;
+         height:50px;
+		 margin:10px auto}
+#button input{ width:80px;
+               height:40px;
+			   float:right;
+			   margin-left:20px}
+input.demo {
+	border:0px;
+    display:block;
+    line-height: 30px;
+    width: 80px;
+    text-align: center;
+    margin: 20px auto;
+    background: #80CB1B;
+    font-size: 16px;
+    padding: 8px 19px 9px;
+    -moz-box-shadow: 0 0 5px #343434;
+    -webkit-box-shadow: 0 0 5px #fff;
+    box-shadow: 0 0 5px #343434;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-decoration: none;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+	-webkit-animation-name: breathingLight;
+	-webkit-animation-duration: 3s;
+	-webkit-animation-iteration-count: infinite;
+}
+@-webkit-keyframes 'breathingLight' {
+        from {
+                background-color: #80CB1B;
+                -webkit-box-shadow:0 0 5px #ccc;
+        }
+	50% {
+                background-color: #B7F20F;
+                -webkit-box-shadow: 0 0 10px #398B08;
+        }
+	to {
+                background-color: #80CB1B;
+                -webkit-box-shadow:0 0 5px #ccc;
+        }
+}

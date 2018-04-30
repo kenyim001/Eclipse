@@ -1,0 +1,138 @@
+@charset "utf-8";
+/* 
+人人为我，我为人人。
+项目开发组：路人甲
+ */
+*{ padding:0px;
+   margin:0px;
+   border:0px;}
+body{ padding-top:10px}
+iframe{
+	width:825px;
+	height:798px;
+	border:0px;}
+#footer{
+	margin:0px auto;
+	
+}
+#footer h2{
+	font-family:"微软雅黑";
+	font-size:15px;
+	text-align:center;
+	font-weight:bold;
+	
+}
+#content{ width:800px;
+          height:600px;
+	      margin:0px auto;
+		  padding-top:20px;}
+#form_in{ width:700px;
+          height:280px;
+	      margin:0px 10px;
+		  z-index:2;
+		  position:relative;
+		  top:0px;
+		  left:0px;
+		  overflow:hidden}
+#form{ width:700px;
+       height:280px;
+       top:-280px;
+	   position:relative;
+	   left:0px;
+	   z-index:1}
+#text{ width:250px;
+       height:200px;
+	   margin:10px 40px;
+	   float:left}
+#text label{ 
+			 height:30px;
+			 width:70px;
+			 font-size:15px;
+			 font-family:"微软雅黑";
+			 font-weight:bold;
+			 }
+#text input{ height:30px;
+			 margin-top:10px;
+			 width:180px;
+			background-color:transparent;
+			font-size:15px;
+			 font-family:"微软雅黑";
+			 font-weight:bold;
+			border-bottom:1px #000000 dashed;}
+#er{ width:235px;
+     height:235px;
+	 float:right;
+	 margin-top:27px;
+	 margin-right:40px;
+	 z-index:2;
+	 }
+.zj{
+	position:relative;
+	top:-150px;
+	left:90px;
+	z-index:1
+}
+#picture{ width:700px;
+          height:100px;
+		  margin:30px 10px}
+#picture ul li{ list-style:none;
+				width:120px;
+				height:90px;
+				margin:5px 10px;
+				float:left}
+#button{ width:200px;
+         height:30px;
+		 margin-right:80px;
+		 float:right}
+#button input{ width:90px;
+               height:40px;
+			   margin-right:10px;
+			   float:right;
+			   color:#FFF;
+			   font-family:"微软雅黑";
+			   border-radius:5px;
+			   text-align:center;
+			   font-size: 17px;
+			   margin-bottom:10px;
+			   }
+			   
+#button a{ width:90px;
+               height:30px;
+			   margin-right:10px;
+			   float:right;
+			   color:#FFF;
+			   font-family:"微软雅黑";
+			   border-radius:5px;
+			   text-align:center;
+			   padding-top:10px;
+			   
+			   }
+.zhichi{
+	text-align:center;
+	margin-top:50px;}
+#yincang{
+	          width:90px;
+               height:30px;
+			   margin-right:10px;
+			   float:right;
+			   color:#FFF;
+			   font-family:"微软雅黑";
+			   border-radius:5px;
+			   text-align:center;
+			   padding-top:10px;
+			   font-size: 15px
+			   
+}
+.filename{
+	width:90px;
+	height:30px;
+	background：transparent;
+	margin-left:10px;
+	 margin-right:10px;
+      float:right;
+      color:#FFF;
+	 font-family:"微软雅黑";
+    border-radius:5px;
+    margin-top:-30px;
+    opacity: 0;
+}

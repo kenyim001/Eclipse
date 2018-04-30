@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+		div{
+			width:200px;
+			height:200px;
+			background-color:red;
+			/*自定义动画基于定位*/
+			position:relative;
+		}
+
+</style>
+<script src="jquery-1.11.1.js"></script>
+<script type="text/javascript">
+		function f1(){
+			$("div").show(3000);
+		}
+		function f2(){
+			//参数2是匿名函数，在动画完成时
+			//由JQUERY自动调用
+			//某件事完成时被自动调用的函数
+			//称之为回调函数
+			$("div").hide(3000,function(){
+				console.log("over");
+				
+			});
+			//动画的实现原理：
+			//通过定时器连续的修改元素的样式
+			//定时器和主线程（f2）并发执行
+			console.log("oK");
+		}
+		$(function(){
+			//给DIV绑定悬停事件
+			$("div").hover(
+			function(){
+					$(this).animate({"left":"10px"},600);
+			},
+			function(){
+					$(this).animate({"left":"0px"},600);
+			}
+			);
+	});
+</script>
+</head>
+<body>
+	<p>
+		<input type="button" value="显示" onclick="f1();"/>
+		<input type="button" value="隐藏" onclick="f2();"/> 
+	</p>
+	<div >
+			
+	</div>	
+</body>
+</html>

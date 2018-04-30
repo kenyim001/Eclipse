@@ -1,0 +1,15 @@
+package com.heima.util;
+
+import javax.swing.text.Document;
+
+public class JaxpUtils {
+
+	public static Document getDocument(){
+		
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

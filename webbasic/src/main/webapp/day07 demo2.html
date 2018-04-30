@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+		<style>
+				p{
+			border:1px solid red;
+			width:200px;
+			height:30px;
+			line-height:30px;
+			text-align:center;
+			font-size:20px;
+		}	
+		</style>
+		<script >
+				var id;
+				function start(){
+					if(id){
+						//若ID非空，刚说明定时器已启动；
+						//此时就不要重复的启动定时器
+						return;
+					}
+					//启动定时器，每1秒刷新一次
+					id=setInterval(function(){
+						//获取当前时间
+						var d=new Date();
+						var time=d.toLocaleTimeString();
+						//将时间写到P里
+						var p=document.getElementById("clock");
+						p.innerHTML=time;
+					}, 1000)
+				}
+				function stop(){
+					clearInterval(id);
+				//清空ID以便于下一次开始
+					id=null;
+					}
+				
+
+		</script>
+</head>
+<body>
+		<input type="button" value="开始" onclick="start();"/>
+		<input type="button" value="停止" onclick="stop();"/>
+		<p id="clock">
+		</p>
+</body>
+</html>

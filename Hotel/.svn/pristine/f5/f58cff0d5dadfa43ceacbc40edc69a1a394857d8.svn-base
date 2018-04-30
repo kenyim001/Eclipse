@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.tedu.hotel.dao.HotelDAO">
+    <select id="findOrder"  resultType="cn.tedu.hotel.entity.Order">
+       select s.orderNumber,s.name,s.gender,s.IDNumber,s.telephone,r.checkin,r.checkout,s.discount,s.paymentStatus,
+       s.consumeCount,r.originalPrice,s.remarks
+        from bzhotel_subscriber s,bzhotel_room r
+         where s.idnumber=r.idnumber
+    </select>
+    
+	
+	
+</mapper>

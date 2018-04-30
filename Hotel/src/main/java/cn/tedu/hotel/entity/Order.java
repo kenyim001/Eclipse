@@ -1,0 +1,110 @@
+package cn.tedu.hotel.entity;
+
+import java.util.Date;
+
+public class Order {
+	private Integer valid;//订单状态
+	private String orderNumber;//订单号
+	private String name;//姓名
+	private String gender;//性别
+	private String IDNumber;//身份证号
+	private String telephone;//手机号
+	private Date checkin;//入住时间
+	private Date checkout;//离店时间
+	private int discount;//优惠折扣
+	private int paymentStatus;//支付状态
+	private int consumeCount;//消费次数
+	private double originalPrice;//原价
+	private String remarks;//备注
+	
+	
+	public Integer getValid() {
+		return valid;
+	}
+	public void setValid(Integer valid) {
+		this.valid = valid;
+	}
+	public String getOrderNumber() {
+		return orderNumber;
+	}
+	public void setOrderNumber(String orderNumber) {
+		this.orderNumber = orderNumber;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public String getIDNumber() {
+		return IDNumber;
+	}
+	public void setIDNumber(String iDNumber) {
+		IDNumber = iDNumber;
+	}
+	public String getTelephone() {
+		return telephone;
+	}
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+	public Date getCheckin() {
+		return checkin;
+	}
+	public void setCheckin(Date checkin) {
+		this.checkin = checkin;
+	}
+	public Date getCheckout() {
+		return checkout;
+	}
+	public void setCheckout(Date checkout) {
+		this.checkout = checkout;
+	}
+	public int getDiscount() {
+		return discount;
+	}
+	public void setDiscount(int discount) {
+		this.discount = discount;
+	}
+	public int getPaymentStatus() {
+		return paymentStatus;
+	}
+	public void setPaymentStatus(int paymentStatus) {
+		this.paymentStatus = paymentStatus;
+	}
+	public int getConsumeCount() {
+		return consumeCount;
+	}
+	public void setConsumeCount(int consumeCount) {
+		this.consumeCount = consumeCount;
+	}
+	public double getOriginalPrice() {
+		return originalPrice;
+	}
+	public void setOriginalPrice(double originalPrice) {
+		this.originalPrice = originalPrice;
+	}
+	public String getRemarks() {
+		return remarks;
+	}
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
+	}
+	@Override
+	public String toString() {
+		return "Order [valid=" + valid + ", orderNumber=" + orderNumber + ", name=" + name + ", gender=" + gender
+				+ ", IDNumber=" + IDNumber + ", telephone=" + telephone + ", checkin=" + checkin + ", checkout="
+				+ checkout + ", discount=" + discount + ", paymentStatus=" + paymentStatus + ", consumeCount="
+				+ consumeCount + ", originalPrice=" + originalPrice + ", remarks=" + remarks + "]";
+	}
+
+	
+	
+	
+}

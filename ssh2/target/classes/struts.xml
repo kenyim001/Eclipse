@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--从struts-2.5.dtd文件复制DOCTYPE  -->
+   <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+	
+<struts>
+	<package namespace="/demo" name="demo" extends="struts-default">
+		<action name="doc" class="docAction">
+			<result name="success" type="redirect">
+				<param name="location">http://doc.tedu.cn</param>
+				<param name="parse">false</param>
+				<!-- <param name="anchor">FRAGMENT</param> -->
+			</result>
+		</action>
+	</package>
+	<package namespace="/test" name="test" extends="struts-default">
+		<action name="test" class="testAction">
+			<result type="redirectAction" name="success">
+				<param name="namespace">/demo</param>
+				<param name="actionName">doc</param>
+			</result>
+		</action>
+		
+		<action name="image" class="imageAction">
+		<result name="success" type="stream">
+		<param name="contentType">image/png</param>
+		<param name="inputName">img</param>
+		</result>
+		</action>
+	</package>
+			
+			<package namespace="/ajax" name="ajax" extends="json-default">
+			<action name="bean" class="beanAction">
+			<!-- 默认情况下，json result将对象整体作为javaBean转换成json字符发送到浏览器，action的bean属性转json -->
+			<result name="success" type="json"/>
+			</action>
+			
+			<action name="root" class="rootAction">
+				<result name="success" type="json">
+				<!--  将控制器rootAction中的result属性序列化为JSON发送到浏览器-->
+				<param name="root">name</param>
+				</result>
+			</action>
+			
+			</package>
+			
+			
+			
+</struts>

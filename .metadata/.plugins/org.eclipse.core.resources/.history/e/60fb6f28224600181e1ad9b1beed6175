@@ -1,0 +1,12 @@
+package com.heima.ui;
+
+import java.util.Scanner;
+
+public class StudentUI{
+
+	static Scanner scan=new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		System.out.println("请选择操作： a)添加用户  b)查询学生  c)删除学生");
+	}
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--从struts-2.5.dtd文件复制DOCTYPE  -->
+   <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+	
+	<struts>
+			<!-- 用来定义“包”，就是定义第一层WEB路径 -->
+			<!--  extends="struts-default"自动继承struts-default.xml 中的定义环境信息-->
+			<package namespace="/de" name="de" extends="struts-default">
+			<!--在package中定义url与控制器和视图的对应关系，哪个url被哪个控制器处理，反回结果映射到哪个jsp视图  -->
+			<!--请求url：demo/hello.action  由DemoAction的execute方法来处理url-->
+			<action name="he" class="cn.tedu.ssh1.action.DemoAction">
+			<!-- result 用于约定控制器返回结果和视图对应关系：success对应demo.jsp -->
+			<result name="success">
+				/WEB-INF/jsp/demo.jsp
+			</result>			
+			</action>
+			
+			<action name="test" class="cn.tedu.ssh1.action.TestAction">
+			<result name="success">
+				/WEB-INF/jsp/demo.jsp
+			</result>
+			</action>
+			
+				<action name="msg" class="cn.tedu.ssh1.action.MseeageAction">
+						<result name="success">
+							/WEB-INF/jsp/show.jsp
+						</result>
+				</action>
+					
+				<!--class属性的值使用srping bean ID时候，就可以从spring中获取控制器bean对象  -->	
+				<action name="spring" class="springAction">
+					<result name="success">
+						/WEB-INF/jsp/demo.jsp
+					</result>
+					</action>
+				</package>
+			
+		
+			
+			<package namespace="/user" name="user" extends="struts-default">
+			<!--调用指定的控制器方法method="add"  -->
+			<action name="add"  method="add" class="cn.tedu.ssh1.vo.UserAction">
+			<result name="success">
+				/WEB-INF/jsp/demo.jsp
+			</result>
+		</action>
+			</package>
+	</struts>

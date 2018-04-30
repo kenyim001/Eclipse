@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+    <hibernate-mapping>
+    	<!--  定义了类和表的对应关系 -->
+    	<class name="cn.tedu.entity.User" table="t_user">
+   			<id name="id" column="u_id"></id>
+   			<!--定义属性和列（字段）的对应关系   -->
+   			<property name="name" column="u_name"/>
+   			<property name="password" column="u_password"/>
+   			<property name="age" column="u_age"/>
+   			<property name="salary" column="u_salary"/>
+   			<property name="hiredate" column="u_hiredate"/>
+    	</class>
+   
+    </hibernate-mapping>

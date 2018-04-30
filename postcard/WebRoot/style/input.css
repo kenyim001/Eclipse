@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+#button{ width:200px;
+         height:30px;
+		 margin-right:80px;
+		 float:right}
+#button input{ width:90px;
+               height:40px;
+			   margin-right:10px;
+			   float:right;
+			   color:#FFF;
+			   font-family:"微软雅黑";
+			   border-radius:5px;
+			   text-align:center;
+			   font-size: 17px;
+			   margin-bottom:10px;
+			   border:0px;
+			   }
+			   
+#button a{ width:90px;
+               height:30px;
+			   margin-right:10px;
+			   float:right;
+			   color:#FFF;
+			   font-family:"微软雅黑";
+			   border-radius:5px;
+			   text-align:center;
+			   padding-top:10px;
+			   
+			   }

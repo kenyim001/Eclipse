@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+		p{
+				border: 1px solid red;
+				width:200px;
+				height:30px;
+				line-height:30px;
+				text-align:center;
+				font-size:20px;
+		}
+	</style>
+`<script type="text/javascript">
+		var id;
+		function start() {
+			if(id){
+				return;
+			}
+			id=setInterval(function(){
+				var d=new Date();
+				var time=d.toLocaleTimeString();
+				var p=document.getElementById("clock");
+				p.innerHTML=time;
+			}, 1000)
+		}
+		function stop() {
+			clearInterval(id);
+			id=null;
+		}
+		function send() {
+			if(id){
+				return;
+			}
+			var p=document.getElementById("111");
+			p.innerHTML="发送中";
+			id=setTimeout(function () {
+			   p=document.getElementById("111");
+				p.innerHTML="发送成功";
+				id=null;
+			}, 3000)
+		}
+		function clean() {
+			if(id){
+				p=document.getElementById("111");
+				clearTimeout(id);
+				p.innerHTML="撤回成功放";
+				id=null;
+			}
+		}
+</script>
+
+
+</head>
+<body>
+		<input type="button" value="开始" onclick="start();"> 
+		<input type="button" value="停止" onclick="stop();"> 
+		<p id="clock">
+		</p>
+		<input type="button" value="发送" onclick="send();"> 
+		<input type="button" value="r撤回" onclick="clean();"> 
+		<p id="111">
+		</p>
+</body>
+</html>

@@ -1,0 +1,130 @@
+package cn.tedu.hotel.entity;
+
+import java.util.Date;
+
+public class Room {
+	private Integer roomNo;//房号
+	private String roomStyle;//房型
+	private String bedStyle;//床型
+	private Integer personCount;//人数
+	private Double originalPrice;//原价
+	private Date checkin;//入住时间
+	private Date checkout;//离店时间
+	private Integer state;//入住状态 0空闲 1预订 2入住
+	private String IDNumber;//身份证号码
+	private String remarks;//备注
+	
+	public Room() {
+		
+	}
+
+	public Room(Integer roomNo, String roomStyle, String bedStyle, Integer personCount, Double originalPrice,
+			Date checkin, Date checkout, Integer state, String iDNumber, String remarks) {
+		super();
+		this.roomNo = roomNo;
+		this.roomStyle = roomStyle;
+		this.bedStyle = bedStyle;
+		this.personCount = personCount;
+		this.originalPrice = originalPrice;
+		this.checkin = checkin;
+		this.checkout = checkout;
+		this.state = state;
+		IDNumber = iDNumber;
+		this.remarks = remarks;
+	}
+
+
+	public Integer getRoomNo() {
+		return roomNo;
+	}
+
+	public void setRoomNo(Integer roomNo) {
+		this.roomNo = roomNo;
+	}
+
+	public String getRoomStyle() {
+		return roomStyle;
+	}
+
+	public void setRoomStyle(String roomStyle) {
+		this.roomStyle = roomStyle;
+	}
+
+	public String getBedStyle() {
+		return bedStyle;
+	}
+
+	public void setBedStyle(String bedStyle) {
+		this.bedStyle = bedStyle;
+	}
+
+	public Integer getPersonCount() {
+		if(this.personCount==null){
+			this.personCount=1;
+		}
+		return personCount;
+	}
+
+	public void setPersonCount(Integer personCount) {
+		this.personCount = personCount;
+	}
+
+	public Double getOriginalPrice() {
+		return originalPrice;
+	}
+
+	public void setOriginalPrice(Double originalPrice) {
+		this.originalPrice = originalPrice;
+	}
+
+	public Date getCheckin() {
+		return checkin;
+	}
+
+	public void setCheckin(Date checkin) {
+		this.checkin = checkin;
+	}
+
+	public Date getCheckout() {
+		return checkout;
+	}
+
+	public void setCheckout(Date checkout) {
+		this.checkout = checkout;
+	}
+
+	public Integer getState() {
+		return state;
+	}
+
+	public void setState(Integer state) {
+		this.state = state;
+	}
+
+	public String getIDNumber() {
+		return IDNumber;
+	}
+
+	public void setIDNumber(String iDNumber) {
+		IDNumber = iDNumber;
+	}
+
+	public String getRemarks() {
+		if(this.remarks==null||this.remarks==""){
+			this.remarks="无";
+		}
+		return remarks;
+	}
+
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
+	}
+
+	@Override
+	public String toString() {
+		return "Room [roomNo=" + roomNo + ", roomStyle=" + roomStyle + ", bedStyle=" + bedStyle + ", personCount="
+				+ personCount + ", originalPrice=" + originalPrice + ", checkin=" + checkin + ", checkout=" + checkout
+				+ ", state=" + state + ", IDNumber=" + IDNumber + ", remarks=" + remarks + "]";
+	}
+
+}

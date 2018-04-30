@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+		<script type="text/javascript">
+			//onload是页面加载完成任务后自动触发，高用对应的函数
+			window.onload=function(){
+				//1.请取节点的名称
+				var p1=document.getElementById("p1");
+				console.log(p1.nodeName);
+				console.log(p1.nodeType);
+				//2.读写节点的内容
+				//内容:双标签中间的文本,如<a>内容</a>
+				//1)innerHTML(支持标签)
+				console.log(p1.innerHTML);
+				p1.innerHTML="1.DOM操作包括<u>读写</u>节点";
+				//1)innerText(不支持标签)
+				var p2=document.getElementById("p2");
+				console.log(p2.innerText);
+				p2.innerText="2.DOM操作包括<u>查询</u>节点";
+				
+				//3.读写节点的值 
+				//值：表单控件中的数据(label除外)
+				//读：input.value 取值 
+				//写：input.value="" 赋值 
+				//注意：实在开发时记不住内容和值的区别就在控制台试一下
+				
+				//4.读写节点属性
+				//1)调用方法进行读写
+				var img=document.getElementById("img1");
+				console.log(img.getAttribute("src"));
+				img.setAttribute("src","images/02.jpg")
+				//2)调用属性名进行读写
+				//举例：p.id  p.className p.style
+				//注意：只有一部分属性可以这样读写
+				//具体参考手册（id,style,className）
+				
+				var p3=document.getElementById("p3");
+				console.log(p3.style.color);
+				p3.style.color="blue";
+			}
+			
+			</script>
+</head>
+<body>
+		<p id="p1">1.DOM操作包括<b>读写</b>节点</p>
+		<p id="p2">2.DOM操作包括<b>查询</b>节点</p>
+		<p id="p3"  style="color:red;">3.DOM操作包括<b>增删</b>节点</p>
+		<p><img src="images/01.jpg" id="img1"/></p>  
+</body>
+</html>

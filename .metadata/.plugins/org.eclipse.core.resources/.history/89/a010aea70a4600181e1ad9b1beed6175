@@ -1,0 +1,10 @@
+package com.heima.bean;
+
+public class Student {
+
+	private String idcard;
+	private String examid;
+	private String name;
+	private String loacation;
+	private float 
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+			function f1(e) {
+				console.log(1);
+				console.log(e);
+			}
+			//2.动态绑定事件
+			window.onload=function(){
+				//给按键2动态绑定单位击事件
+				var btn2=document.getElementById("btn2");
+				
+				btn2.onclick=function(e){
+					console.log(2);
+					console.log(e);
+				}
+			}
+	</script>
+</head>
+<body>
+		<!--直接定义事件  -->
+		<input type="button" value="按键1" onclick="f1(event);"/>
+		<input type="button" value="按键2" id="btn2"/>
+</body>
+</html>
+
+var e = event || window.event || arguments.callee.caller.arguments[0]&&( event || window.event || arguments.callee.caller.arguments[0]).code==113

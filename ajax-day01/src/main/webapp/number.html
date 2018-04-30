@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="js/jquery-1.4.3.js"></script>
+<script type="text/javascript">
+/*  	function shownumber(){
+		var xhr=getAjax();
+		xhr.open('post','shownumber.do',false)
+		xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4&&
+					xhr.status==200){
+				var txt=xhr.responseText;
+				$('#number').html(txt)
+			}
+		};
+		xhr.send();
+	} */
+	
+	 
+ 	/* $(function (){setInterval(shownumber,5000)});   */
+	 
+	function shownumber(){
+		$.ajax({
+			"url":"shownumber.do",
+			"type":"get",
+			"dataType":"text",
+			"success":function(data){
+				$('#number').html(data);
+			}
+		});
+	 } 
+	 
+/* 	function shownumber2(){
+		var xhr=getAjax();
+		xhr.open('get','shownumber.do?'+Math.random(),true)
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4&&
+					xhr.status==200){
+				var txt=xhr.responseText;
+				$('number2').innerHTML=txt
+			}
+		};
+		xhr.send(null);
+	} */
+
+	
+	function shownumber2(){
+		//load方法：向服务器发送异步请求(shownumber.do这个地址),然后将服务器返回的数据添加到符合为要求的节点上
+		//即id为number2
+		$('#number2').load('shownumber.do');
+	 }
+</script>
+</head>
+<body>
+
+	<a href="javascript:shownumber();">点击</a>
+	<span id="number"></span>
+	
+	<a href="javascript:shownumber2();">点击</a>
+	<span id="number2"></span>
+</body>
+</html>

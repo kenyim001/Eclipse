@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.4.3.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#b1').click(f1);
+	});
+
+	function f1(){
+		$('#h1').load('saveInfo.do',$('#form1').serialize());
+	}	
+</script>
+</head>
+
+<body style="font-size:30px;">
+	<form action="" id="fomr1">
+		<fieldset>
+			<legend>送货信息</legend>
+			收货人：<input name="name"/><br/>
+			联系电话：<input name="phone"/><br/>
+			地址：<input name="address"/><br/>
+			<input id="b1" type="button" value="确定"/>		
+		</fieldset>
+	</form>
+</body>
+</html>

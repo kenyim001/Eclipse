@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.tedu.hotel.dao.HotelDAO">
+    <select id="findOrder"  resultType="cn.tedu.hotel.entity.Order">
+             
+        SELECT * FROM (SELECT t.*,ROWNUM rn FROM (select s.orderNumber,s.name,
+        s.gender,s.IDNumber,s.telephone,r.checkin,r.checkout,s.discount,s.paymentStatus,
+       s.consumeCount,r.originalPrice,s.remarks,s.valid
+        from bzhotel_subscriber s,bzhotel_room r
+         where s.idnumber=r.idnumber order by r.checkin) t where ROWNUM&lt;=#{pageObject.endIndex})              
+          where rn&gt;=#{pageObject.startIndex} 
+    </select>
+    
+	<select id="getRowCount" resultType="java.lang.Integer">
+		SELECT COUNT(*)from(select s.orderNumber,s.name,s.gender,s.IDNumber,s.telephone,r.checkin,r.checkout,s.discount,s.paymentStatus,
+       s.consumeCount,r.originalPrice,s.remarks,s.valid
+        from bzhotel_subscriber s,bzhotel_room r
+         where s.idnumber=r.idnumber) p        
+	</select>
+	
+ 
+<select id="getOrderCount" parameterType="cn.tedu.hotel.entity.Order" resultType="java.lang.Integer">
+		SELECT COUNT(*)from(select s.orderNumber,s.name,s.gender,s.IDNumber,s.telephone,r.checkin,r.checkout,s.discount,s.paymentStatus,
+       s.consumeCount,r.originalPrice,s.remarks,s.valid
+        from bzhotel_subscriber s,bzhotel_room r
+         where s.idnumber=r.idnumber) p
+         <where>
+             <if test="Order.name!=null and Order.name!=''">
+              p.name like CONCAT(CONCAT('%',#{Order.name}),'%')
+             </if>
+             <if test="Order.valid!=null">
+              and p.valid=#{Order.valid}
+             </if>
+         </where>
+	</select>
+	
+	<select id="findByIdOrder"   resultType="cn.tedu.hotel.entity.Order">           
+          SELECT * FROM (SELECT t.*,ROWNUM rn FROM (select s.orderNumber,s.name,
+        s.gender,s.IDNumber,s.telephone,r.checkin,r.checkout,s.discount,s.paymentStatus,
+       s.consumeCount,r.originalPrice,s.remarks,s.valid
+        from bzhotel_subscriber s,bzhotel_room r
+         where s.idnumber=r.idnumber  
+         
+             <if test="Order.name!=null and Order.name!=''">
+             and s.name like CONCAT(CONCAT('%',#{Order.name}),'%')
+             </if>
+             <if test="Order.valid!=null">
+              and s.valid=#{Order.valid}
+             </if>
+              order by r.checkin  
+         ) t where ROWNUM&lt;=#{pageObject.endIndex})  where rn&gt;=#{pageObject.startIndex} 
+    </select>
+    
+    <update id="updateValid">
+          update bzhotel_subscriber
+          set valid=#{Valid}
+          where orderNumber in
+          <foreach collection="ids" open="(" close=")" separator="," item="item">#{item}</foreach> 
+      </update>
+    <select id="userMsg" resultType="cn.tedu.hotel.entity.User">
+       select orderNumber,name,gender,IDNumber,telephone,paymentStatus,valid from bzhotel_subscriber where name=#{User.name}
+      
+    </select>
+    
+    
+</mapper>

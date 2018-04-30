@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>wifi</title>
+<!-- <link rel="stylesheet" href="style/index.css"> -->
+<link rel="stylesheet" href="style/bootstrap-theme.min.css">
+<link rel="stylesheet" href="style/input.css">
+</head>
+
+<body>
+<div id="content">
+<div id="form_in">
+<div id="form">
+<div id="text">
+<form action="#" method="post">
+<!-- 下面的id别改动 别重复-->
+<p><label>无线名称：</label><input type="text" id="name" /></p>
+<p>
+加密方式：
+<select id="option_type">
+        <option value="WEP">WEP</option>
+        <option value="WPA">WPA/WPA2</option>
+ </select>
+</p>
+<p><label>无线秘钥：</label><input type="text" id="password" /></p>
+</form>
+</div>
+<div id="er"><img src="" id="qr_img" /></div>
+</div>
+</div>
+<div id="button">
+<input type="button" class="btn btn-success" id="begin" value="生成" />
+<a class="btn btn-success" type="button" onclick="clean()">清空</a>
+</div>
+<img src="images/wifi.png" class="zhichi" style="text-align:center; margin-top:50px;">
+</div>
+</body>
+
+	<script type="text/javascript" src="js/jquery.js"> </script>
+	<script type="text/javascript" src="js/html2canvas.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+		 $("#begin").click(function(){createCode();});
+		 
+	});
+	function createCode(){
+		var str,name,type,password;
+		name=$("#name").val();
+		type=$("#option_type").val();
+		password=$("#password").val(); 
+		
+		var str = "WIFI:S:"+name+";T:"+type+";P:"+password+";";
+		$.ajax({
+			type:"post",
+			url:"qrcode",
+			data:{content:str},
+			success:function(data){
+			$("#qr_img").fadeIn("slow");
+				$("#qr_img").attr("src","qrcode/"+data);
+			}
+		});
+		
+	}
+	
+	function print(){
+		html2canvas( $("#form_in") , 
+		{
+	  		onrendered: function(canvas) 
+	  		{   
+	    		$('#print').attr( 'href' , canvas.toDataURL() ) ;
+	    		$('#print').attr( 'download' , 'myjobdeer.png' ) ;
+	    		//$('#print').css('display','inline-block');
+	  		}
+	  	});
+	}
+	
+	function clean(){
+		$("form").find(':input').not(':button,:submit,:reset').val('').removeAttr('checked').removeAttr('selected');
+		$("#qr_img").attr("src","");
+	}
+</script>
+	
+</html>

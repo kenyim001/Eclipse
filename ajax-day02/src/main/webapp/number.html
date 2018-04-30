@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/ajax2.js"></script>
+<script type="text/javascript">
+	function shownumber(){
+		var xhr=getAjax();
+		xhr.open('post','shownumber.do',true)
+		xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4&&
+					xhr.status==200){
+				var txt=xhr.responseText;
+				$('number').innerHTML=txt
+			}
+		};
+		xhr.send();
+	}
+	
+	function shownumber2(){
+		var xhr=getAjax();
+		xhr.open('get','shownumber.do?'+Math.random(),true)
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4&&
+					xhr.status==200){
+				var txt=xhr.responseText;
+				$('number2').innerHTML=txt
+			}
+		};
+		xhr.send(null);
+	}
+
+</script>
+</head>
+<body>
+
+	<a href="javascript:shownumber();">点击</a>
+	<span id="number"></span>
+	
+	<a href="javascript:shownumber2();">点击</a>
+	<span id="number2"></span>
+</body>
+</html>

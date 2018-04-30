@@ -1,0 +1,83 @@
+.img {
+	cursor:pointer;
+	background-color:#000;
+}
+
+.area {
+	border: 1px solid #ccc;
+	height: 440px;
+}
+
+
+.picandbutton {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 6%;
+	margin: 0 auto;
+	z-index: 100;
+	display: none;
+}
+
+.showbigpic {
+	text-align: center;
+}
+
+.button {
+	text-align: center;
+}
+
+.button img {
+	cursor: pointer;
+}
+
+.img .imgmsg {
+	position: absolute; 
+	display: none;
+	width: 348px;
+	text-align: center;
+	color: #eeffff;
+	opacity: 0.80;
+}
+
+.overbody {
+	position: fixed;
+	top:0;
+	height: 100%;
+	width: 100%;
+	z-index: 99;
+	background-color: #000;
+	display: none;
+}
+
+.bedStyle,.description{
+	font-size: 22px;
+	
+	color: #36a1b2;
+}
+
+.offers-left .pricearea {
+	font-size: 20px;
+}
+
+.price {
+	color: #965858;
+	font-size: 30px;
+}
+
+.offers-left {
+	margin-bottom: 50px;
+}
+
+#pages {
+	text-align: center;
+	font-size: 20px;
+}
+
+.pageCurrent {
+	color: #988f92;
+}
+
+.first,.pre,.num a,.next,.last {
+	cursor: pointer;
+}

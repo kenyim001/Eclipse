@@ -1,0 +1,9 @@
+package com.heima.ui;
+
+import java.util.Scanner;
+
+public class StudentUI{
+
+	static Scanner scan=new Scanner(System.in));
+	
+}

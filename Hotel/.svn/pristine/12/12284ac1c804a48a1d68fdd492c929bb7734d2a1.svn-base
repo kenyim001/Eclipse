@@ -1,0 +1,42 @@
+$(document).ready(function(){
+	
+	showOrder();
+});
+
+function showOrder(){
+	
+	var url="findOrderMsg.do"
+		
+	$.post(url,function(result){
+		 
+		 console.log("bba "+result[0].name);
+		setOrder(result);
+	});	
+}
+ function setOrder(result){
+	
+	 
+	 var tBody=$("#hotelMsg");
+	 tBody.empty();
+	 
+	 for(var i in result){
+		 var tr=$('<tr></tr>')
+		 console.log("bb"+result[i].orderNumber);
+		 var tds='<td>'+result[i].orderNumber+'</td>'
+		      +'<td>'+result[i].name+'</td>'
+		      +'<td>'+result[i].gender+'</td>'
+		      +'<td>'+result[i].IDNumber+'</td>'
+		      +'<td>'+result[i].telephone+'</td>'
+		      +'<td>'+result[i].checkin+'</td>'
+		      +'<td>'+result[i].checkout+'</td>'
+		      +'<td>'+result[i].paymentStatus+'</td>'
+		      +'<td>'+result[i].consumeCount+'</td>'
+		      +'<td>'+result[i].originalPrice+'</td>'
+		      +'<td>'+result[i].remarks+'</td>'
+		      +'<td>无</td>'+
+		      +'<td>修改</td>'
+		      tr.append(tds);
+		      tBody.append(tr);
+	 }
+	 
+ }

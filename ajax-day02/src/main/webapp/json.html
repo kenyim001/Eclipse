@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function f1(){
+	var obj={"code":"600877","name":"中国嘉陵","price":10};
+	alert(obj.name);
+	}
+	function f2(){
+		var obj={"company":"达内","add":{
+		"city":"北京",
+		"street":"北三环",
+		"room":708
+		}
+		};
+		alert(obj.add.city);
+		alert(obj.company);
+	}
+	
+	//使用json表示对象组成的数组
+	function f3(){
+		var arr=[{"name":"楚乔","age":22},{"name":"洛河","age":42}];
+		alert(arr[1].name);
+	}
+	
+	//将json字符串转换成javascript对象
+	function f4(){
+		var str='{"name":"楚乔","age":"22"}';
+		//使用javascript内置对象json提供的方法来转换
+		var obj=JSON.parse(str);
+		alert(obj.name);
+	}
+	
+	function f5(){
+		var str='[{"name":"楚乔","age":22},{"name":"洛河","age":42}]';
+		var arr=JSON.parse(str);
+		alert(arr[1].name);
+	}
+	</script>
+</head>
+<body style="font-size:30px;">
+<a href="javascript:f1()">点我</a>
+<a href="javascript:f2()">点我</a>
+<a href="javascript:f3()">点我</a>
+<a href="javascript:f4()">点我</a>
+<a href="javascript:f5()">点我</a>
+</body>
+</html>

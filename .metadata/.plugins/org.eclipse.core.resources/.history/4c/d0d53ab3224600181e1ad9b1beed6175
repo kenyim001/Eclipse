@@ -1,0 +1,38 @@
+package com.heima.ui;
+
+import java.util.Scanner;
+
+public class StudentUI{
+
+	static Scanner scan=new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		System.out.println("请选择操作： a)添加用户  b)查询学生  c)删除学生");
+	
+	String op=scan.next();
+	
+	
+	if ("a".equalsIgnoreCase(op)) {
+		addStudent();
+	}else if("b".equalsIgnoreCase(op)){
+		findStudentByExamId();
+	}else if("c".equalsIgnoreCase(op)){
+		removeStudentByname();
+	}else if("c".equalsIgnoreCase(op)){
+		System.out.println("没有此种操作");
+	}
+
+	private static void removeStudentByname() {
+		
+	}
+
+	private static void findStudentByExamId() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void addStudent() {
+		// TODO Auto-generated method stub
+		
+	}
+}

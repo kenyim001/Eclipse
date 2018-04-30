@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <!-- <servlet>
+  	<servlet-name>addEmpServlet</servlet-name>
+  	<servlet-class>web.AddEmpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>addEmpServlet</servlet-name>
+  	<url-pattern>/add</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>FindServlet</servlet-name>
+  	<servlet-class>web.FindAllEmpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FindServlet</servlet-name>
+  	<url-pattern>/list</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>DeleteServlet</servlet-name>
+  	<servlet-class>web.DeleteEmpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DeleteServlet</servlet-name>
+  	<url-pattern>/del</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>LoadServlet</servlet-name>
+  	<servlet-class>web.LoadEmpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LoadServlet</servlet-name>
+  	<url-pattern>/load</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ModifyServlet</servlet-name>
+  	<servlet-class>web.ModifyEmpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ModifyServlet</servlet-name>
+  	<url-pattern>/modify</url-pattern>
+  </servlet-mapping> -->
+  
+    <servlet>
+  	<servlet-name>EmpServlet</servlet-name>
+  	<servlet-class>web.EmpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>EmpServlet</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping> 
+  
+  
+</web-app>

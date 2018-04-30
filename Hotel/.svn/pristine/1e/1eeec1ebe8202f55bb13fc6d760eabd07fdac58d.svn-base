@@ -1,0 +1,111 @@
+$(document).ready(function(){
+	 $("#queryFormId").on("click",".btn-search",getPageObjects);	
+	getPageObjects();
+});
+
+function getPageObjects(){
+	
+
+	var params=getQueryFormData();	
+	console.log(JSON.stringify(params))
+	if(params.name!='' && params.name!=null ||params.valid!='' && params.valid!=null){
+		console.log("wwww");
+		var url="findOrderNameMsg.do"
+			$.post(url,params,function(map){	
+				console.log(JSON.stringify(map))
+				var result=map.data.idList;
+			
+				setSercahOrder(result);
+				var pageObject=map.data.pageObject;
+						
+				setPages(pageObject)
+			});	
+	}else{
+		
+		var url="findOrderMsg.do"
+	$.post(url,params,function(map){	
+		
+		var result=map.data.list;
+		
+		setOrder(result);
+		var pageObject=map.data.pageObject;
+			
+		setPages(pageObject)
+	});	
+	}
+}
+function setSercahOrder(result){
+	 var tBody=$("#hotelMsg");
+	 tBody.empty();
+	
+	 
+	 for(var i in result){
+		
+		 var tr=$('<tr></tr>')
+		
+		 var tds=
+			 '<td>'+((result[i].valid)?"有效":"无效")+'</td>'
+			 +'<td>'+result[i].orderNumber+'</td>'
+		      +'<td>'+result[i].name+'</td>'
+		      +'<td>'+result[i].gender+'</td>'
+		      +'<td>'+result[i].idnumber+'</td>'
+		      +'<td>'+result[i].telephone+'</td>'
+		      +'<td>'+result[i].checkin+'</td>'
+		      +'<td>'+result[i].checkout+'</td>'
+		      +'<td>'+result[i].discount+'</td>'
+		      +'<td>'+((result[i].paymentStatus)?"已付":"未付")+'</td>'
+		      +'<td>'+result[i].consumeCount+'</td>'
+		      +'<td>'+result[i].originalPrice+'</td>'
+		      +'<td>'+result[i].remarks+'</td>'
+		      +'<td>无</td>'+
+		      +'<td>修改</td>'
+		      tr.append(tds);
+		      tBody.append(tr);
+	 }
+	
+}
+function getQueryFormData(){
+	var params={
+		"name":$("#searchNameId").val(),
+		"valid":$("#searchValidId").val(),
+		"pageCurrent":$(".pages").data("pageCurrent"),		
+	}
+	
+	
+	return params;
+}
+
+
+
+ function setOrder(result){
+	
+	 
+	 var tBody=$("#hotelMsg");
+	 tBody.empty();
+	
+	 
+	 for(var i in result){
+		
+		 var tr=$('<tr></tr>')
+		
+		 var tds=
+			 '<td>'+((result[i].valid)?"有效":"无效")+'</td>'
+			 +'<td>'+result[i].orderNumber+'</td>'
+		      +'<td>'+result[i].name+'</td>'
+		      +'<td>'+result[i].gender+'</td>'
+		      +'<td>'+result[i].idnumber+'</td>'
+		      +'<td>'+result[i].telephone+'</td>'
+		      +'<td>'+result[i].checkin+'</td>'
+		      +'<td>'+result[i].checkout+'</td>'
+		      +'<td>'+result[i].discount+'</td>'
+		      +'<td>'+((result[i].paymentStatus)?"已付":"未付")+'</td>'
+		      +'<td>'+result[i].consumeCount+'</td>'
+		      +'<td>'+result[i].originalPrice+'</td>'
+		      +'<td>'+result[i].remarks+'</td>'
+		      +'<td>无</td>'+
+		      +'<td>修改</td>'
+		      tr.append(tds);
+		      tBody.append(tr);
+	 }
+	 
+ }

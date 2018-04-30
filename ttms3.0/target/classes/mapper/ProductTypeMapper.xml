@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.ttms.product.dao.ProductTypeDao">
+	<!-- 查询所有 -->
+	<select id="findObjects" resultType="map">
+		select
+			c.*,(select p.name from tms_product_types p where p.id = c.parentId) as parentName 
+		from
+			tms_product_types c
+	</select>
+	
+	<select id="findTreeNodes" resultType="map">
+	    	select
+			id,
+			name,
+			parentId
+		  from
+			tms_product_types
+	</select>
+   <!-- 保存操作 -->
+	<insert id="insertObject" parameterType="cn.tedu.ttms.product.entity.ProductType">
+		insert into tms_product_types
+		(name,sort,parentId,note,createdUser,modifiedUser,createdTime,modifiedTime)
+		values 
+		(#{name},#{sort},#{parentId},#{note},#{createdUser},#{modifiedUser},NOW(),NOW());
+	</insert>
+    
+    <update id="updateObject" parameterType="cn.tedu.ttms.product.entity.ProductType">
+        update tms_product_types
+		set name=#{name},parentId=#{parentId},note=#{note},modifiedUser=#{modifiedUser}, modifiedTime=NOW()
+		where id=#{id};
+	</update>
+	
+    <!-- 根据id查询菜单信息 -->
+	<select id="findObjectById" resultType="map">
+		select 
+			name,
+			sort,
+			parentId,
+			note,
+			(select p.name from tms_product_types p where p.id = c.parentId) as parentName
+		from 
+			tms_product_types c
+		where
+			id = #{id}
+	</select>
+		<!-- 查询要删除的菜单是否有子菜单 -->
+	<select id="hasChildObject" resultType="java.lang.Integer">
+		select
+			count(*)
+		from
+			tms_product_types
+		where
+			parentId = #{id}
+	</select>
+	
+	<delete id="deleteObjectById" parameterType="java.lang.Integer">
+	    delete from tms_product_types where id=#{id}
+	</delete>
+	
+</mapper>

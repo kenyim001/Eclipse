@@ -1,0 +1,50 @@
+package cn.tedu.hotel.controller;
+
+
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import cn.tedu.hotel.common.web.JsonResult;
+import cn.tedu.hotel.common.web.PageObject;
+import cn.tedu.hotel.entity.Order;
+import cn.tedu.hotel.service.HotelService;
+
+@Controller
+
+public class HotelController {
+	
+	@Resource
+	private HotelService hotelService;
+	
+	@RequestMapping("/hotelUI")
+	public String hotelUI(){
+		System.out.println("hotelUI()");
+		
+		/*return "hotel/order";*/
+		return "order";
+	}
+	
+	@RequestMapping("/findOrderMsg")
+	@ResponseBody
+	public JsonResult findOrderMsg(PageObject pageObject){
+		System.out.println("getPageCurrent"+pageObject.getPageCurrent());
+		System.out.println("getStartIndex"+pageObject.getStartIndex());
+		System.out.println("getEndIndex"+pageObject.getEndIndex());
+		Map<String,Object> map=hotelService.findOrder(pageObject);
+		System.out.println(map);
+		return new JsonResult(map);
+	}
+	@RequestMapping("/findOrderNameMsg")
+	@ResponseBody
+	public JsonResult findByNameOrder(Order order,PageObject pageObject){
+		Map<String,Object> map=hotelService.findByIdOrder(order, pageObject);
+		System.out.println("map"+map);
+		return new JsonResult(map);
+		
+	}
+}

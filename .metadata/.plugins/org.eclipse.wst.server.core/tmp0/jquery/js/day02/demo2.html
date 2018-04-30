@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+		.big{
+			font-size:30px;
+		}
+		.important{
+			color:red;
+		}
+</style>
+<script src="jquery-1.11.1.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("p").addClass("big").addClass("important");
+		$("p").removeClass("big").removeClass("important");
+		console.log($("p").hasClass("big"));
+	});
+		function f1(){
+			$("p").toggleClass("big");
+		}
+	
+</script>
+</head>
+<body>
+		<p>JQuery专门对象样式操作提供了支持</p>
+		<input type="button" value="切换" onclick="f1();"/>
+</body>
+</html>

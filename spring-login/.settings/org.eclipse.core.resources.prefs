@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//src/main/java/cn/tedu/ems/controller/LoginController.java=UTF-8
+encoding//src/main/java/cn/tedu/ems/dao/UserDAOJdbcImpl.java=UTF-8
+encoding//src/main/java/cn/tedu/ems/interceptors/SessionInterceptor.java=GBK
+encoding//src/main/java/cn/tedu/ems/service/ApplicationException.java=UTF-8
+encoding//src/main/java/cn/tedu/ems/service/LoginServiceImpl.java=UTF-8
+encoding//src/test/java/test/TestCase.java=UTF-8
